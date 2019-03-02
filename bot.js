@@ -103,7 +103,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 client.on("message", message => {
- if (message.content === "r+help") {
+ if (message.content === "!+help") {
   const embed = new Discord.RichEmbed() 
       .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
@@ -134,7 +134,14 @@ client.on("message", message => {
 -color / لي تغير لونك』
 -rainbow / الرنبو』
 **
-
+        ***__Staff orders__***        
+**
+!kick طرد الشخص 
+!ban حظر الشخص 
+!clear مسح الشات
+!mute عمل ميوت لللشخص
+!unmute فك الميوت عن الشخص 
+**
         ***__Games orders__***
  **       
 -لعبه صراحه / صراحه』
