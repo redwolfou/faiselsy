@@ -3,6 +3,7 @@ const client = new Discord.Client();
 var prefix = "!";
 var adminprefix = '!'
 
+
 client.on("message", async message => {
         if(!message.channel.guild) return;
  var prefix= "!";
@@ -12,7 +13,7 @@ client.on("message", async message => {
         let guildicon = guild.icon_url
         let members = guild.memberCount
         let bots = guild.members.filter(m => m.user.bot).size
-        let humans = guild.members.filter(m => !m.user.bot).size
+        let humans = members - bots
         let allchannels = guild.channels.size
         let textchannels = guild.channels.filter(e => e.type === "text")
         let voicechannels = guild.channels.filter(e => e.type === "voice")
@@ -33,7 +34,7 @@ client.on("message", async message => {
           .addField(`أيموجيات الخاصة بالسيرفر : (${guild.emojis.size})`, `- ${guild.emojis.array()}`, true)
           .setFooter(`تم انشاء هذه السيرفر في: ${guild.createdAt}`)
  
-       message.channel.send({ embed: embed });
+       message.channel.send({embed:embed});
  
       }
     });
